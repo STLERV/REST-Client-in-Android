@@ -27,18 +27,18 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GitHubService gitHubService = GitHubService.retrofit.create(GitHubService.class);
-                final Call<List<Contributor>> call =
-                        gitHubService.repoContributors("square", "retrofit");
 
-                call.enqueue(new Callback<List<Contributor>>() {
+                GitHubService gitHubService = GitHubService.retrofit.create(GitHubService.class);
+                 Call<List<Tracks>> call =  gitHubService.mistracks();
+
+                call.enqueue(new Callback<List<Tracks>>() {
                     @Override
-                    public void onResponse(Call<List<Contributor>> call, Response<List<Contributor>> response) {
+                    public void onResponse(Call<List<Tracks>> call, Response<List<Tracks>> response) {
                         final TextView textView = (TextView) findViewById(R.id.textView);
                         textView.setText(response.body().toString());
                     }
                     @Override
-                    public void onFailure(Call<List<Contributor>> call, Throwable t) {
+                    public void onFailure(Call<List<Tracks>> call, Throwable t) {
                         final TextView textView = (TextView) findViewById(R.id.textView);
                         textView.setText("Something went wrong: " + t.getMessage());
                     }

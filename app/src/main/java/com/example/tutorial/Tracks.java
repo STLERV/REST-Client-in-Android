@@ -1,15 +1,10 @@
 package com.example.tutorial;
 
-public class Contributor {
+public class Tracks {
 
-        String login;
-        String html_url;
+   public String id;
+   public  String title;
+    public String singer;
 
-        int contributions;
 
-        @Override
-        public String toString() {
-            return login + " (" + contributions + ")";
-        }
-    }
-
+}

@@ -8,15 +8,17 @@ import retrofit2.http.Path;
 import java.util.List;
 
 
+
 interface GitHubService {
-    @GET("repos/{owner}/{repo}/contributors")
-    Call<List<Contributor>> repoContributors(
-            @Path("owner") String owner,
-            @Path("repo") String repo);
+
+
+    @GET("tracks")
+
+    Call<List<Tracks>> mistracks();
 
 
     public static final Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
+            .baseUrl("http://147.83.7.203:8080/dsaApp/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 }
