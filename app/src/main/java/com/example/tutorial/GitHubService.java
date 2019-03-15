@@ -6,6 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.Field;
 import java.util.List;
 
 
@@ -26,12 +29,13 @@ interface GitHubService {
 
 
     @GET("tracks/{id}")
-
     Call<Tracks> Hola( @Path("id") String id );
 
+    @POST("tracks")
+    Call<Tracks> añadirunacancion(@Body Tracks tracks);
 
-
-
+    @DELETE("tracks/{id}")
+    Call<Tracks> deleteTrack(@Path("id") String id);
 
 
 
